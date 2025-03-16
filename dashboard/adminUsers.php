@@ -1,15 +1,15 @@
-<?php include "http://localhost/jobportal/includes/conn.php"; ?>
+<?php include "../includes/conn.php"; ?>
 
-<?php include "http://localhost/jobportal/includes/indexHeader.php" ?>
+<?php include "../includes/indexHeader.php" ?>
 
 <body>
-  <?php include "http://localhost/jobportal/includes/indexNavbar.php" ?>
+  <?php include "../includes/indexNavbar.php" ?>
   <div class="dashboard-container">
     <?php include "./dashboardSidebar.php" ?>
     <div class="all-jobs-container">
       <div class="headline headline-container">
         <h3>All Users - Admin</h3>
-        <a href="http://localhost/jobportal/Report Generation/Admin/report-for-admin.php" class="btn"><i class="fa-solid fa-download"></i> Report</a>
+        <a href="../Report Generation/Admin/report-for-admin.php" class="btn"><i class="fa-solid fa-download"></i> Report</a>
       </div>
       <div>
         <table>

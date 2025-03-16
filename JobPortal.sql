@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 10, 2023 at 10:55 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Mar 16, 2025 at 04:09 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `password`, `fullname`, `profile_pic`, `email`, `createdat`, `gender`, `dob`, `address`, `role_id`, `contactno`) VALUES
-(1, '$2y$10$N/k4/DWuDzTXBrpiYDsO1.59tXkKQuLXcxB.eSrvdknLyMssxZYii', 'admin sabbir', '21560ff720ef5c73fa38ae6923adf1c5shreemangal.jpg', 'adminsabbir@gmail.com', '0000-00-00', 'Male', '1995-06-07', 'Dhaka', 3, '01510151265');
+(1, '$2y$10$yn8FrtD8OkDlbH8xGHAYX.p4PyFfI.rxto0.Y/f1crx2ODyIpwGeS', 'admin Deepak', '21560ff720ef5c73fa38ae6923adf1c5shreemangal.jpg', 'admind@gmail.com', '0000-00-00', 'Male', '2000-06-07', 'Kokar', 3, '7004778337');
 
 -- --------------------------------------------------------
 
@@ -128,8 +128,7 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`id_company`, `industry_id`, `companyname`, `role_id`, `address`, `state_id`, `city_id`, `contactno`, `website`, `email`, `password`, `aboutme`, `hash`, `createdAt`, `active`, `esta_date`, `empno`, `profile_pic`) VALUES
-(1, 14, 'Brain Station', 2, 'Bangladesh', 3, 18, '01404-055220', 'https://brainstation-23.com', 'brainstation@gmail.com', '$2y$10$LIMkadRxBHTFTjxyp52jMOOUCcAU9v9a2YcUlhD6T3caeSAlU4KGG', 'It was in 2006, with little capital but a pocketful of belief our CEO, Raisul Kabir started Brain Station 23, a software company, right after graduating from BUET. The new company initially focused on the international market with the local market added in 2010. Since then the company has shown a continuous growth and currently employs over 700+ software engineers. Brain Station 23 is now not only an established name in Bangladesh but also in countries like the USA, UK, Netherlands, Denmark, Japan, Norway, Sweden, Germany, Canada, Switzerland, Turkey and the Middle East etc.', '', '2023-06-27', 0, '2006-11-14', 800, '75ef2589822c79bbc9c343bb255ca5aasundarban.jpg'),
-(4, 7, 'Bashundhara Group', 2, 'Plot # 125/A, Block# A, Bashundhara R/A, Road No - 2 Baridhara, Dhaka-1229', 3, 18, '+880 2 8432008-17', 'https://www.bashundharagroup.com/', 'bashundhara@gmail.com', '$2y$10$DYLcqXt.dJJQ7YuPS6Ug8ubjc8wJ51GvEHiwapuqLL8ajGE13ZQP2', 'THE BASHUNDHARA GROUP HAS STARTED OPERATION AS A REAL ESTATE VENTURE KNOWN AS BASHUNDHARA UNDER THE AEGIS OF THE GROUP  FIRST CONCERN - THE EAST-WEST PROPERTY DEVELOPMENT (PVT) LTD IN 1987.', '', '2023-07-04', 0, '1987-10-07', 12000, '14495f1d1b0af572ffce16b16f4b2606FindJobsWallpaper.jpg');
+(10, NULL, 'djha', 2, NULL, NULL, NULL, NULL, NULL, 'd@gmail.com', '$2y$10$/11RE5JS6iYVJ4d9X9MIIeMz2pIFomCIK/nVaq4GitxOfmKE6y4J.', NULL, '', '2025-03-16', 0, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -144,13 +143,6 @@ CREATE TABLE `company_reviews` (
   `review` text NOT NULL,
   `createdat` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `company_reviews`
---
-
-INSERT INTO `company_reviews` (`id`, `company_id`, `createdby`, `review`, `createdat`) VALUES
-(9, 4, 8, 'This company is superb. it has a very good working culture.', '2023-08-10 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -169,70 +161,31 @@ CREATE TABLE `districts_or_cities` (
 --
 
 INSERT INTO `districts_or_cities` (`id`, `division_id`, `name`) VALUES
-(1, 1, 'Barguna'),
-(2, 1, 'Barisal'),
-(3, 1, 'Bhola'),
-(4, 1, 'Jhalokati'),
-(5, 1, 'Patuakhali'),
-(6, 1, 'Pirojpur'),
-(7, 2, 'Bandarban'),
-(8, 2, 'Brahmanbaria'),
-(9, 2, 'Chandpur'),
-(10, 2, 'Chittagong'),
-(11, 2, 'Comilla'),
-(12, 2, 'Cox\'s Bazar'),
-(13, 2, 'Feni'),
-(14, 2, 'Khagrachhari'),
-(15, 2, 'Lakshmipur'),
-(16, 2, 'Noakhali'),
-(17, 2, 'Rangamati'),
-(18, 3, 'Dhaka'),
-(19, 3, 'Faridpur'),
-(20, 3, 'Gazipur'),
-(21, 3, 'Gopalganj'),
-(22, 3, 'Kishoreganj'),
-(23, 3, 'Madaripur'),
-(24, 3, 'Manikganj'),
-(25, 3, 'Munshiganj'),
-(26, 3, 'Narayanganj'),
-(27, 3, 'Narsingdi'),
-(28, 3, 'Rajbari'),
-(29, 3, 'Shariatpur'),
-(30, 3, 'Tangail'),
-(31, 4, 'Bagerhat'),
-(32, 4, 'Chuadanga'),
-(33, 4, 'Jessore'),
-(34, 4, 'Jhenaidah'),
-(35, 4, 'Khulna'),
-(36, 4, 'Kushtia'),
-(37, 4, 'Magura'),
-(38, 4, 'Meherpur'),
-(39, 4, 'Narail'),
-(40, 4, 'Satkhira'),
-(41, 5, 'Jamalpur'),
-(42, 5, 'Mymensingh'),
-(43, 5, 'Netrakona'),
-(44, 5, 'Sherpur'),
-(45, 6, 'Bogra'),
-(46, 6, 'Joypurhat'),
-(47, 6, 'Naogaon'),
-(48, 6, 'Natore'),
-(49, 6, 'Nawabganj'),
-(50, 6, 'Pabna'),
-(51, 6, 'Rajshahi'),
-(52, 6, 'Sirajganj'),
-(53, 7, 'Dinajpur'),
-(54, 7, 'Gaibandha'),
-(55, 7, 'Kurigram'),
-(56, 7, 'Lalmonirhat'),
-(57, 7, 'Nilphamari'),
-(58, 7, 'Panchagarh'),
-(59, 7, 'Rangpur'),
-(60, 7, 'Thakurgaon'),
-(61, 8, 'Habiganj'),
-(62, 8, 'Moulvibazar'),
-(63, 8, 'Sunamganj'),
-(64, 8, 'Sylhet');
+(1, 1, 'Darbhanga, Bihar'),
+(2, 1, 'Patna, Bihar'),
+(3, 1, 'Ranchi, Jharkhand'),
+(4, 1, 'Kolkata, West Bengal'),
+(5, 1, 'Mumbai, Maharashtra'),
+(6, 1, 'Delhi, Delhi'),
+(7, 2, 'Bangalore, Karnataka'),
+(8, 2, 'Chennai, Tamil Nadu'),
+(9, 2, 'Hyderabad, Telangana'),
+(10, 2, 'Jaipur, Rajasthan'),
+(11, 2, 'Lucknow, Uttar Pradesh'),
+(12, 2, 'Kanpur, Uttar Pradesh'),
+(13, 2, 'Nagpur, Maharashtra'),
+(14, 2, 'Indore, Madhya Pradesh'),
+(15, 2, 'Bhopal, Madhya Pradesh'),
+(16, 2, 'Surat, Gujarat'),
+(17, 2, 'Vadodara, Gujarat'),
+(18, 3, 'Agra, Uttar Pradesh'),
+(19, 3, 'Ludhiana, Punjab'),
+(20, 3, 'Nashik, Maharashtra'),
+(21, 3, 'Visakhapatnam, Andhra Pradesh'),
+(22, 3, 'Rajkot, Gujarat'),
+(23, 3, 'Ghaziabad, Uttar Pradesh'),
+(24, 3, 'Thane, Maharashtra'),
+(25, 3, 'Guwahati, Assam');
 
 -- --------------------------------------------------------
 
@@ -328,15 +281,6 @@ CREATE TABLE `job_post` (
   `deadline` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `job_post`
---
-
-INSERT INTO `job_post` (`id_jobpost`, `id_company`, `jobtitle`, `industry_id`, `job_status`, `description`, `minimumsalary`, `maximumsalary`, `state_id`, `city_id`, `createdat`, `experience`, `edu_qualification`, `skills_ability`, `responsibility`, `deadline`) VALUES
-(3, 1, 'Front End Developer (Angular)', 14, 1, 'We hire Front End developers (Angular) with experience in enterprise systems. You will work with, learn from, and contribute to a talented international software team. We build enterprise trading and financial applications. Our team is composed of experts in multiple disciplines working remotely from anywhere in the world. You should be an expert in Angular or similar front end technologies and excel at working through the full development cycle, from concept and design to coding, testing, software implementation and maintenance. This is a full-time position, working from home', '23000.00', '37000.00', 3, 18, '2023-06-30 15:50:04', 1, '2', 'Fluent in HTML5, CSS3 and JavaScript (ES5 / ES6)\r\nFluent in Angular10 and above JavaScript framework\r\nIn-depth understanding of OOP and SOLID programming\r\nFluent in rxjs and ngrx\r\nFluent in working with forms\r\nFamiliarity with dynamic loading\r\nFamiliarity with Responsive design concepts\r\nFamiliarity with at least one CSS framework such as Bootstrap, Material\r\nFull familiarity with RESTful API concepts\r\nFamiliarity and experience working with Git', 'Mentoring and guiding other engineers to best software industry practices, tools and processes.\r\nYour role in the company will be to join our full-stack development group and work in scrum teams to accomplish your teams goals.\r\nA great opportunity for career development and growth. We provide training and mentorship as well as grow your development skills in advanced programming languages and technologies.\r\nMust provide own work environment: Windows machine, highspeed Internet, and a quiet work area at home.', '2023-08-25'),
-(4, 1, 'Video Editor & Digital Marketer', 9, 1, 'This position will be responsible for regularly editing and creating videos for our Company. In addition, the position will be in charge of launching campaigns with digital marketing strategy to drive traffic and revenue. Candidates must be fully proficient in English & Bangla.', '30000.00', '50000.00', 3, 18, '2023-07-01 11:46:45', 2, '2', 'The applicants should have experience in the following area(s): Digital Marketing, Digital Marketing (Social Media Marketing), video editing, Video Editor, Video Editor & Graphics designer', 'Develop digital marketing strategies to enhance branding, implement digital marketing sales plans, creative planning, and execution of all the digital marketing campaigns, including good knowledge of content writing.\r\nDevelop and execute digital marketing strategies across multiple channels, including social media, email marketing, search engine marketing, and display advertising.\r\nManage Facebook page (Example: Comments reply, Checking inbox), Instagram etc.\r\nDesign visually appealing graphics and marketing materials, such as banners, info graphics, and social media visuals.', '2023-07-25'),
-(6, 4, 'Filed Operator (Operation), BOGCL', 15, 1, 'Bashundhara Oil and Gas Company Ltd., a subsidiary of Bashundhara Group, is looking for some competent candidates for the position of \"Filed Operator (Operation)- BOGCL\" for its Bitumen Plant in Keranigonj.', '70000.00', '100000.00', 3, 18, '2023-07-04 15:07:20', 5, '2', 'Minimum 5 years experience in Process Plant as Field Operator. Experience in Fuel or Edible oil refinery are preferred. For more experienced personnel, educational qualification could be relaxed.', 'Receiving shift information from previous shift personnel properly and act accordingly.\r\nTake data & monitor process parameter. Inform shift engineer about any anomaly & take proper steps to maintain process parameter within standard value as per instruction from shift engineer.\r\nTake proper actions at the time of plant start up, shut down and emergency situation according to the standard operating procedure as per instruction from shift engineer.\r\nHanding over responsibilities to the next shift personnel.', '2023-08-25');
-
 -- --------------------------------------------------------
 
 --
@@ -370,16 +314,6 @@ CREATE TABLE `saved_jobposts` (
   `createdat` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `saved_jobposts`
---
-
-INSERT INTO `saved_jobposts` (`id_saved`, `id_jobpost`, `id_user`, `createdat`) VALUES
-(6, 5, 8, '2023-07-17 00:00:00'),
-(7, 6, 0, '2023-07-28 00:00:00'),
-(8, 4, 0, '2023-07-28 00:00:00'),
-(9, 6, 8, '2023-07-28 00:00:00');
-
 -- --------------------------------------------------------
 
 --
@@ -396,14 +330,16 @@ CREATE TABLE `states` (
 --
 
 INSERT INTO `states` (`id`, `name`) VALUES
-(1, 'Barisal Division'),
-(2, 'Chittagong Division'),
-(3, 'Dhaka Division'),
-(4, 'Khulna Division'),
-(5, 'Mymensingh Division'),
-(6, 'Rajshahi Division'),
-(7, 'Rangpur Division'),
-(8, 'Sylhet Division');
+(1, 'Andhra Pradesh'),
+(2, 'Arunachal Pradesh'),
+(3, 'Assam'),
+(4, 'Bihar'),
+(5, 'Chhattisgarh'),
+(6, 'Goa'),
+(7, 'Gujarat'),
+(8, 'Haryana'),
+(9, 'Himachal Pradesh'),
+(10, 'Jharkhand');
 
 -- --------------------------------------------------------
 
@@ -434,15 +370,6 @@ CREATE TABLE `users` (
   `profile_pic` text DEFAULT 'user.png',
   `createdat` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id_user`, `fullname`, `email`, `password`, `address`, `headline`, `role_id`, `city_id`, `state_id`, `contactno`, `education_id`, `dob`, `age`, `resume`, `hash`, `active`, `aboutme`, `skills`, `gender`, `profile_pic`, `createdat`) VALUES
-(8, 'Jawwad Al Sabbir', 'mdsabbirhosen926@gmail.com', '$2y$10$vqsDy25Rx1B/2n3Z/6KI..oTMF2AwAXwIZHwsfiSqw.lC2q71lhGm', 'Patuakhali Science and Technology University,Dumki-8602,Pirtola Bazar,Patuakhali.', 'Software Engineer', 1, 5, 1, '01710151265', 7, '1999-10-13', NULL, '9bbb5f8aa2c4d5ac9ef31dec610ba406New-York-Resume-Template-Creative.pdf', NULL, 0, 'I am a web developer.', 'HTML, CSS, javascript.', 'male', '9bbb5f8aa2c4d5ac9ef31dec610ba406IMG_8791.JPG', '2023-07-02'),
-(9, 'kallol', 'kallol@gmail.com', '$2y$10$.gbGBrPH41jG2TYanuPqc.YrNO/LEzUDrG14H54JOmZ9rz35jSpUm', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, NULL, NULL, NULL, 'user.png', '2023-07-16'),
-(10, 'Hasan Farazi', 'hasaanfarazi17@gmail.com', '$2y$10$Q6iEm.hgdXZunxa5WBjmlOJyyBfFJ1yK30KPvdP4y60JzbBQ0/1qu', 'Dumki,Patuakhali.', 'Entrepreauner', 1, 4, 1, '01736022148', 7, '2000-12-27', NULL, '50ccf2730e312c8f5d73f9eb1a400062Grace-ResumeViking-15-1.pdf', NULL, 0, 'i am a billionaire', 'speaking, influencing.', 'male', '50ccf2730e312c8f5d73f9eb1a400062Man-DRAWING-–-STEP-10.jpg', '2023-08-01');
 
 --
 -- Indexes for dumped tables
@@ -516,7 +443,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `id_company` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_company` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `company_reviews`

@@ -28,7 +28,7 @@ To get started with the Job Portal Project:
 4. Setup the tcpdf library for pdf report generation. (For setup you can follow this video: https://youtu.be/Q1iGTtMspho?si=f7XJ_I8wEJxiiaJb)
 5. For Admin credentials:
     -Username: adminsabbir@gmail.com
-    -Password: admin5678
+    -Password: admin123
 7. Access the application through your web browser.
 
 
@@ -39,7 +39,7 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 
 ## Contact
 
-For questions or support, contact me at mdsabbirhosen926@gmail.com.
+For questions or support, contact me at jhadeepak7296@gmail.com
 
 Enjoy exploring the Job Portal Project!
 
